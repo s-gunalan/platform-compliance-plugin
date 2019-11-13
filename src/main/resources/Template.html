@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mule Lint Result</title>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="circle.css">
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                    </head>
+                    <body>
+                        <div class="jumbotron text-center shadow-lg p-2 text-dark">
+                            <h1>Unilever Platform Compliance Plugin Results</h1>
+                            <p>Summary of PCP Framework!</p>
+                            <img src='Lint-PRO-logo.ong'> 
+
+                            </div>
+                            <!--<span class="float-right"><a href="Rules.html" class="btn btn-info" role="button">Lint Rules</a></span>-->
+                            <div class="container">
+                                <div class="card-deck">
+                                    <div class="row container bg-white bg-dark rounded-lg shadow-lg p-3 mb-3 media">
+                                        <h5 class="col-8">Status:</h5>
+                                        <h3 class="col-4">${pcp.status}</h3>
+                                        <h6 class="col-8">Developer:</h6>
+                                        <h6 class="col-4">${developer.name}</h6>
+                                    </div>
+                                    <br>
+                                        <div class="row container bg-white text-danger rounded-lg shadow-lg p-4 mb-4 media">
+                                            <h5 class="col-8">Non - Compliances :</h5>
+                                            <h3 class="col-4">${critical.count}</h3><br>
+                                            <p class="col-8">Max Allowed : 0</p>
+                                            <br>
+                                                <table  id="critical" class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>S.No</th>
+                                                            <th>Compliance Check</th>
+                                                            <th>API Id</th>
+                                                        </tr>
+                                                    </thead>
+    ${critical.bug.list.table}
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </html>
